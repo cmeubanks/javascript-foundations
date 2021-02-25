@@ -3,6 +3,7 @@ class Fairy {
     this.name = name;
     this.dust = 10;
     this.disposition = 'Good natured';
+    this.humanWards = [];
     this.clothes = {
       dresses: ['Iris'],
     };
@@ -22,8 +23,14 @@ class Fairy {
     this.disposition = 'Vengeful';
   }
   replaceInfant(object) {
-    this.disposition = 'Malicious';
-    object.disposition = this.disposition;
+    if(this.disposition === 'Vengeful') {
+    object.disposition = 'Malicious';
+    this.humanWards.push(object);
+  }
+  if(this.humanWards.length === 2){
+    this.disposition = 'Good natured';
+  }
+  return object
   }
 }
 
