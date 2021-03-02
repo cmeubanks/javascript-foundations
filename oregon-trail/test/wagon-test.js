@@ -5,7 +5,7 @@ var Gear = require('../src/gear.js');
 var Settler = require('../src/settler.js');
 
 describe('Wagon', function() {
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var voyager = new Wagon({ name: 'Voyager' });
     var newHorizons = new Wagon({ name: 'New Horizons' });
 
@@ -13,18 +13,18 @@ describe('Wagon', function() {
     assert.equal(newHorizons.title, 'New Horizons');
   });
 
-  it.skip('should have no wheels by default', function() {
+  it('should have no wheels by default', function() {
     var wagon = new Wagon({ name: 'New Horizons' });
 
     assert.deepEqual(wagon.wheels, []);
   });
 
-  it.skip('should be able to be constructed with wheels', function() {
+  it('should be able to be constructed with wheels', function() {
     var wheel1 = new Part('wheel');
     var wheel2 = new Part('wheel');
     var wagon = new Wagon({ name: 'New Horizons', wheels: [wheel1, wheel2] });
 
-    assert.deepEqual(wagon.wheels, [wheel, wheel2]);
+    assert.deepEqual(wagon.wheels, [wheel1, wheel2]);
   });
 
   it.skip('should have no axles by default', function() {
