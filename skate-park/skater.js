@@ -7,22 +7,15 @@ class Skater {
    this.frustration = 0;
  }
  practice(trick) {
-   // var key = Object.keys(this.tricks);
-   // for(var i = 0; i < key.length; i++){
-   //   console.log("array length", key.length)
-   //   if(key[i] != trick){
-   //     console.log("key", key[i])
-   //     console.log("trick", trick)
-   //     return this.frustration+=1
-   //   }
-   // }
-   console.log(this.tricks.kickflip)
-if (this.tricks.kickflip != true){
-  this.frustration++
-} else if (!this.tricks.treflip){
-  this.frustration++
-}
- }
+  if(this.tricks[trick] != true){
+    this.frustration+=1
+    }
+  if(this.frustration === 3 || this.frustration === 6){
+    this.frustration = 0;
+    this.tricks[trick] = true;
+    return `I just learned to ${trick}!!!`
+  }
+  }
 }
 
 
